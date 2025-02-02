@@ -1,0 +1,169 @@
+.endChat {
+  padding-bottom: 100px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Sparkle effect */
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, white, transparent);
+  border-radius: 50%;
+  animation: sparkleAnim 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkleAnim {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+/* Ensures proper positioning */
+.move {
+  padding-right: 300px;
+}
+
+.newForm {
+  position: fixed;
+  bottom: 24px;
+  background-color: rgb(31, 31, 33);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 29px;
+  width: 600px;
+  height: 60px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1a1d1d;
+  .text {
+    background-color: #1a1d1d;
+  }
+  &:hover {
+    transition: all;
+    transition-duration: 0.3s;
+    border-color: #454745; /* Change the border color */
+    box-shadow: 0 0 10px #fffefe, 0 0 8px #09ff00;
+
+    button {
+      background: linear-gradient(
+        100deg,
+        #b2fdbe9c,
+        #11111111,
+        #5555,
+        #33333333,
+        #5555
+      );
+    }
+  }
+  .message {
+    gap: 90px;
+    .chatimage {
+      height: 10px;
+    }
+  }
+
+  textarea {
+    flex: 1;
+    padding: 25px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    /* background-color: transparent; */
+    /* color: rgb(230, 227, 227); */
+  }
+
+  button,
+  label {
+    border-radius: 60%;
+    border: none;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: ease-in-out;
+    transition-duration: 0.4s;
+    background-color: rgb(62, 64, 64);
+
+    &:hover {
+      transition: ease-in-out;
+      transition-duration: 0.3s;
+      background-color: rgb(58, 58, 58);
+      rotate: calc(-45deg);
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.myImg {
+  max-width: none; /* Removes any max-width constraint */
+  width: auto; /* Keeps aspect ratio intact */
+  height: auto; /* Maintains aspect ratio */
+  margin: 0px auto;
+  display: block; /* Prevent inline display issues */
+  transform: scale(6); /* Keep the scale as you wanted */
+  transform-origin: top center; /* Keeps scaling origin centered on top */
+  position: relative; /* Allows for better positioning */
+  margin-bottom: 250px;
+  overflow: visible; /* Add space below the image */
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .newForm {
+    width: 70%; /* Adjust width for medium screens */
+    padding: 0px 30px; /* Slightly reduce padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .newForm {
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 0px 20px; /* Further reduce padding */
+  }
+
+  .newForm input {
+    padding: 20px; /* Reduce padding for input fields */
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .newForm {
+    width: 100%; /* Full width for very small screens */
+    gap: 10px; /* Reduce gap to optimize space */
+    padding: 0px 15px;
+    bottom: 15px; /* Adjust the position for smaller screens */
+  }
+
+  .newForm input {
+    padding: 15px; /* Further reduce padding */
+    font-size: 13px; /* Smaller font size for compact view */
+  }
+
+  .newForm button,
+  .newForm label {
+    padding: 10px; /* Reduce button size */
+  }
+}
